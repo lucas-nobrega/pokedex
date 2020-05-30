@@ -7,6 +7,7 @@ import { navigate } from "@reach/router";
 axios
     .get("https://pokedex20201.herokuapp.com/users/" + user)
     .then(res => {console.log(res.data.user.username + " -- OK")}
+    qualquer coisa
 );
 */
 
