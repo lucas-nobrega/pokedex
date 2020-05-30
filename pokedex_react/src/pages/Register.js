@@ -7,7 +7,12 @@ import { navigate } from "@reach/router";
 axios
     .get("https://pokedex20201.herokuapp.com/users/" + user)
     .then(res => {console.log(res.data.user.username + " -- OK")}
-);a
+<<<<<<< HEAD
+);
+=======
+    qualquer coisa
+);
+>>>>>>> bfa08ed5a96866456c76188b9d139dc78960ee81
 */
 
 

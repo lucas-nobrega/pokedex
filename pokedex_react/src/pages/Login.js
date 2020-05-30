@@ -5,10 +5,10 @@ import {UserContext} from "../App.js"
 const Login = () =>{
     const {value,setValue} = useContext(UserContext)
 
-    const [err,setErr] = React.useState('')
-    const [err_2,setErr_2] = React.useState('')
+    const [err,setErr] = React.useState('');
+    const [err_2,setErr_2] = React.useState('');
     const input = React.useRef();
-    const [users,setUsers] = React.useState(null)
+    const [users,setUsers] = React.useState(null);
     
     const set = (event) =>{
         event.preventDefault();
