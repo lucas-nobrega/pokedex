@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Router } from "@reach/router";
 import './App.css';
+
 
 import Home from "./pages/Home"
 import Login from "./pages/Login";
 import Register from "./pages/Register"
 import Pokemons from "./pages/Pokemons"
+export  const UserContext = createContext(null);
 
 function App() {
+  const [value, setValue] = React.useState([])
   return (
     <div className="App">
-        <Router>
-          <Home path = "/" />
-          <Login path = "/login"/>
-          <Register path = "/register"/>
-          <Pokemons path = "/pokemons"/>
-        </Router>
+        <UserContext.Provider value = {{value, setValue}}>
+          <Router>
+            <Home path = "/" />
+            <Login path = "/login"/>
+            <Register path = "/register"/>
+            <Pokemons path = "/pokemons"/>
+          </Router>
+        </UserContext.Provider>
     </div>
   );
 }

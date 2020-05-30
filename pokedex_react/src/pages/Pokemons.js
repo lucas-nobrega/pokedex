@@ -1,9 +1,14 @@
-import React from "react"
-
+import React, { useContext } from "react"
+import {UserContext} from "../App.js";
 
 const Pokemons = () =>{
+    const {value,setValue} = useContext(UserContext);
     return(
-        <h1>Pokemons</h1>
+        <div>
+            <h1>Pokemons</h1>
+            <span>{value.username}</span>
+
+        </div>
     )
 }
 
