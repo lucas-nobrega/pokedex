@@ -24,7 +24,10 @@ const Login = () =>{
     
 
     const enter = () => {
-        setValue(users);
+        setValue({
+            user: users,
+            pokemon: value.pokemon
+        });
         navigate('./pokemons');
     }
     return(

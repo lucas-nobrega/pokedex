@@ -3,3 +3,21 @@
   margin: auto;
   text-align: center;
 }
+.pokemons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+}
+
+.pokemon{
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+  border: solid black;
+  border-radius: 10px;
+}
+.pokemon img{
+  display: block;
+}
+.pokemon span{
+  display: block;
+}

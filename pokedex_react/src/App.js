@@ -7,10 +7,14 @@ import Home from "./pages/Home"
 import Login from "./pages/Login";
 import Register from "./pages/Register"
 import Pokemons from "./pages/Pokemons"
+import PokemonProfile from "./pages/PokemonProfile"
 export  const UserContext = createContext(null);
 
 function App() {
-  const [value, setValue] = React.useState([])
+  const [value, setValue] = React.useState({
+    user:[],
+    pokemon: []
+  })
   return (
     <div className="App">
         <UserContext.Provider value = {{value, setValue}}>
@@ -19,6 +23,7 @@ function App() {
             <Login path = "/login"/>
             <Register path = "/register"/>
             <Pokemons path = "/pokemons"/>
+            <PokemonProfile path = "/pokemon_profile"/>
           </Router>
         </UserContext.Provider>
     </div>
