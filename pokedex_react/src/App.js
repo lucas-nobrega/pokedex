@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login";
 import Register from "./pages/Register"
 import Pokemons from "./pages/Pokemons"
+import Profile from './pages/Profile';
 export  const UserContext = createContext(null);
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Login path = "/login"/>
             <Register path = "/register"/>
             <Pokemons path = "/pokemons"/>
+            <Profile path = "/profile" />
           </Router>
         </UserContext.Provider>
     </div>
