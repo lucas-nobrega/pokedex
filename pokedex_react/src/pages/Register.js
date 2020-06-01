@@ -16,7 +16,11 @@ const Form = () => {
             }
         })
         .then(() => alert("Usuario criado com sucesso!"))
-        .catch(res => {console.log(res); alert("Ops deu erro!");});
+        .catch(res => {
+            if(res.response.status === 422){
+                alert("O usuário existente, faça login");
+            }
+        });
         
         navigate('./login');
     };
