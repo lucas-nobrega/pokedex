@@ -57,7 +57,7 @@ const ProfilePokemon = () => {
     };
     const addFavoritos = () => {
         
-        axios({  //FALTA TRATAR CASO O POKEMON JA FOI FAVORITADO
+        axios({ 
             method: 'post',
             url: 'https://pokedex20201.herokuapp.com/users/' + nameUser + '/starred/' + namePokemon,
             data: {}
@@ -65,7 +65,7 @@ const ProfilePokemon = () => {
         .catch( (err) => {
             
             if(err.response.status == 422){
-                axios({  //FALTA TRATAR CASO O POKEMON JA FOI FAVORITADO
+                axios({
                     method: 'delete',
                     url: 'https://pokedex20201.herokuapp.com/users/' + nameUser + '/starred/' + namePokemon,
                     params: {}
