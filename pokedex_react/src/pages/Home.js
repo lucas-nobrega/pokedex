@@ -1,12 +1,13 @@
 import React from "react";
+import { navigate } from "@reach/router";
 
 
 const Home = () => {
     return(
         <div className = "Home">
             <h1>Bem vindo</h1>
-            <a href = "./login" >Login</a>
-            <a href = "./register" >Registrar-se</a>
+            <button onClick = {() => navigate("/login")}>Login</button>
+            <button onClick = {() => navigate("/register")}>Registrar-se</button>
         </div>
     )
 }

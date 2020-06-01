@@ -1,3 +1,7 @@
+body{
+   background-color: rgb(0, 247, 255);;
+}
+
 .login{
   width: 960px;
   margin: auto;
@@ -19,5 +23,68 @@
   display: block;
 }
 .pokemon span{
-  display: block;
+  margin-right: 40px;
+  background-color: blue;
+  color: aqua;
+  border-radius: 6px;
+}
+.Home{  
+  width: 960px;
+  margin:auto;
+  text-align: center;
+}
+.Home h1{
+  color: blue;
+}
+.Home button{
+  color: aqua;
+  border: solid blue;
+  background-color: blue;
+  border-radius: 10px;
+}
+.login h1{
+  color: blue;
+}
+.login button{
+  color: aqua;
+  border: solid blue;
+  background-color: blue;
+  border-radius: 10px;  
+}
+.login input{
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+.err{
+  color: tomato;
+}
+.pokemonsPage h1{
+  width: 960px;
+  margin:auto;
+  text-align: center;
+  color: blue;
+}
+.pokemonsPage p{
+  width: 200px;
+  color: aqua;
+  margin:auto;
+  text-align: center;
+  border: solid blue;
+  border-radius: 10px;
+  background-color: blue;
+}
+.profileButton{
+  margin-left: 730px;
+  text-align: center;
+  color: aqua;
+  border: solid blue;
+  background-color: blue;
+  border-radius: 10px;
+}
+.pokemon button{
+  color: aqua;
+  border: solid blue;
+  background-color: blue;
+  border-radius: 10px; 
 }

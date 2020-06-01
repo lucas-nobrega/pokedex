@@ -38,13 +38,12 @@ const Login = () =>{
                 setErr('')
                 setErr_2('')
             }}>
-                <label>Usuário</label>
-                <input type = "text" ref = {input}/>
+                <input type = "text" ref = {input} placeholder = "Usuário"/>
             </form>
-                {users && <button onClick = {enter}>entrar</button>}
-                <p><a href = "./register">Registrar-se</a></p>
-                <p>{err}</p>
-                <p>{err_2}</p>
+                {users && <button onClick = {enter}>Entrar</button>}
+                <p><button onClick = {() => navigate("/register")}>Registrar-se</button></p>
+                <p className = "err">{err}</p>
+                <p className = "err">{err_2}</p>
         </div>
     )
 }

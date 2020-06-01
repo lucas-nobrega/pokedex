@@ -5,12 +5,12 @@ import {UserContext} from "../App.js"
 
 const Profile = () => {
 
-    const user = useContext(UserContext);
+    const {value,setValue} = useContext(UserContext)
     const [userInfo, setUserInfo] = useState([]);
     const [pokemonsFavoritos, setPokemonsFavoritos] = useState([]);
     useEffect( () => {
         axios
-            .get("https://pokedex20201.herokuapp.com/users/" + user)
+            .get("https://pokedex20201.herokuapp.com/users/" + value.user.username)
             .then(res => {
                 setUserInfo(res.data); 
                 setPokemonsFavoritos(res.data.pokemons);
@@ -63,9 +63,9 @@ const Profile = () => {
     return (
         <div className="profile">
             <div style={profileStyle}>
-                <h1>{user}</h1>
+                <h1>{value.user.username}</h1>
                 <div style={favoritosStyle}>
-                    <Favoritos />
+                    <Favoritos/>
                 </div>
             </div>
         </div>

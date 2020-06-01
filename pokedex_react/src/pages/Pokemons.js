@@ -42,9 +42,10 @@ const Pokemons = () =>{
         .then((res) => setPokemons(res.data.data))
     },[])
     return(
-        <>
+        <div className ="pokemonsPage">
             <h1>Pokemons</h1>
-            <span>{value.user.username}</span>
+            <p>Name: {value.user.username}</p>
+            <button className = "profileButton" onClick = {() => navigate("./profile")}>Profile</button>
             <div className = "pokemons">
                 {pokemons.map(p=>(
                     <div className = "pokemon" key = {p.id}>
@@ -55,7 +56,7 @@ const Pokemons = () =>{
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
