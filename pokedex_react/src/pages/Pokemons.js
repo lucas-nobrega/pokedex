@@ -6,21 +6,34 @@ import {UserContext} from "../App.js";
 const Pokemons = () =>{
     const {value,setValue} = useContext(UserContext);
     const[pokemons,setPokemons] = React.useState([])
+    
 
     const profile = (p) =>{
         setValue({
             user: value.user,
             pokemon: p,
         })
-        navigate("./pokemon_profile")
+        navigate("./profilePokemon")
     }
-    const starred = (p) =>{
-        console.log(value)
-        console.log(p)
-        //axios.post(`https://pokedex20201.herokuapp.com/users/${value.username}/starred/${p}`)
-        axios
-            .get(`https://pokedex20201.herokuapp.com/users/${value.username}`)
-            .then(res => console.log(res.data.pokemons))
+    const starred = async (p) =>{
+        axios({ 
+            method: 'post',
+            url: 'https://pokedex20201.herokuapp.com/users/' + value.user.username + '/starred/' + p.name,
+            data: {}
+        }).then( () => { console.log("Favoritado") } )
+        .catch( (err) => {
+            
+            if(err.response.status == 422){
+                axios({
+                    method: 'delete',
+                    url: 'https://pokedex20201.herokuapp.com/users/' + value.user.username + '/starred/' + p.name,
+                    params: {}
+                }).then ( res => {
+                    console.log(res);
+                } ).catch ( err => {console.log(err);} )
+
+            }
+        });
     }
 
     React.useEffect(() =>{

@@ -5,8 +5,7 @@ import { UserContext } from "../App.js"
 
 
 const ProfilePokemon = () => {
-    const namePokemon = "metapod";
-    const nameUser = "lucas";
+    const {value,setValue} = useContext(UserContext);
     const [pokemonInfo, setPokemonInfo] = useState([]);
     const [userInfo, setUserInfo] = useState([]);
 
@@ -26,13 +25,13 @@ const ProfilePokemon = () => {
 
     useEffect(() => {
         axios
-            .get("https://pokedex20201.herokuapp.com/pokemons/" + namePokemon)
+            .get("https://pokedex20201.herokuapp.com/pokemons/" + value.pokemon.name)
             .then(res => {
                 setPokemonInfo(res.data);
                 console.log(res.data);
             });
         axios
-            .get("https://pokedex20201.herokuapp.com/users/" + nameUser)
+            .get("https://pokedex20201.herokuapp.com/users/" + value.user.username)
             .then(res => {
                 setUserInfo(res.data);
                 console.log(res.data);
@@ -59,7 +58,7 @@ const ProfilePokemon = () => {
         
         axios({ 
             method: 'post',
-            url: 'https://pokedex20201.herokuapp.com/users/' + nameUser + '/starred/' + namePokemon,
+            url: 'https://pokedex20201.herokuapp.com/users/' + value.user.username + '/starred/' + value.pokemon.name,
             data: {}
         }).then( () => { console.log("Favoritado") } )
         .catch( (err) => {
@@ -67,7 +66,7 @@ const ProfilePokemon = () => {
             if(err.response.status == 422){
                 axios({
                     method: 'delete',
-                    url: 'https://pokedex20201.herokuapp.com/users/' + nameUser + '/starred/' + namePokemon,
+                    url: 'https://pokedex20201.herokuapp.com/users/' + value.user.username + '/starred/' + value.pokemon.name,
                     params: {}
                 }).then ( res => {
                     console.log(res);
