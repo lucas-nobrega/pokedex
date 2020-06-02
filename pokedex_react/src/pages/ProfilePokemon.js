@@ -67,7 +67,7 @@ const ProfilePokemon = () => {
                 axios({
                     method: 'delete',
                     url: 'https://pokedex20201.herokuapp.com/users/' + value.user.username + '/starred/' + value.pokemon.name,
-                    params: {}
+                        params: {}
                 }).then ( res => {
                     console.log(res);
                 } ).catch ( err => {console.log(err);} )
